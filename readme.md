@@ -1,7 +1,12 @@
 # Step 1
 
 - [ ] Créer une constante nommée `root` qui ciblera la `div` du __DOM__ ayant `id="root"`
-- [ ] Créer une constante nommée `todoHtml` qui ciblera une `div` créé via javascript _(`document.createElement("div")`)_
-- [ ] Ajouter une ___class___ à cette `div` _(`todoHtml`)_ nouvellement créée
-- [ ] Insérer le texte _"todo 1"_ dans `todoHtml`
-- [ ] Insérer `todoHtml` dans la `div` ayant `id="root"` _(`root`)_
+- [ ] Créer une constante nommée `todoUl` qui sera assignée à une balise `<ul>` créée via javascript _(`createElement`)_
+- [ ] Ajouter une ___class___ `todos-list` à cet `<ul>` nouvellement créé
+- [ ] Insérer dans le `<ul>` le contenu suivant _(`innerHTML`)_: 
+```js
+<li class="todo">
+  <a class="todo__link" href="#">Todo numéro 1</a>
+</li>
+```
+- [ ] Insérer `todoUl` dans `root` _(`append`)_

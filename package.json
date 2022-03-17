@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "sass --no-source-map --watch src/scss/index.scss src/css/style.css --style compressed"
+  },
+  "dependencies": {
+    "sass": "^1.43.4"
+  }
+}

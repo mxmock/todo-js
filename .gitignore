@@ -1,0 +1,4 @@
+node_modules
+*.sh
+*.yml
+Dockerfile
