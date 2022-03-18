@@ -11,4 +11,4 @@ todoUl.innerHTML = `
 </li>
 `;
 // insertion de la div créée dans la div avec l'id "root"
-root.appendChild(todoUl);
+root.append(todoUl);
