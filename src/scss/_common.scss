@@ -25,3 +25,33 @@ html,
 body {
   overflow: auto;
 }
+
+/* accessibility */
+
+.sr-only {
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+
+*:focus,
+button:focus,
+input:focus,
+optgroup:focus,
+select:focus,
+textarea:focus,
+.focusable:focus {
+  outline: none;
+  box-shadow: var(--focus-border);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: unset !important;
+    transition: none !important;
+  }
+}

@@ -6,31 +6,42 @@
   background: lightgrey;
 }
 
+@mixin cross-line {
+  &:after {
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 6px;
+    content: "";
+    position: absolute;
+    border-radius: 50px;
+    background: rgba(128, 128, 128, 0.788);
+    transform: translate(-50%, -50%) rotate(-3deg);
+  }
+}
+
 .todos-list {
+  gap: 16px;
   font-size: 40px;
 }
 
 .todo {
+  --todo-shadow: 0px 2px 4px 0px hsl(34deg 78% 20% / 40%);
   &__link {
-    &:hover {
+    &:hover,
+    &:focus {
       background: bisque;
       transform: scale(1.05);
     }
+    &:focus {
+      box-shadow: var(--todo-shadow), var(--focus-border);
+    }
     &--completed {
-      &:hover {
+      &:hover,
+      &:focus {
         @include completed;
       }
-      &:after {
-        top: 50%;
-        left: 50%;
-        width: 80%;
-        height: 6px;
-        content: "";
-        position: absolute;
-        border-radius: 50px;
-        background: rgba(128, 128, 128, 0.788);
-        transform: translate(-50%, -50%) rotate(-3deg);
-      }
+      @include cross-line;
       @include completed;
     }
     cursor: pointer;
@@ -39,10 +50,11 @@
     line-height: 32px;
     user-select: none;
     border-radius: 4px;
+    align-items: center;
     text-decoration: none;
     transition: 0.1s ease-out;
     background: antiquewhite;
     color: rgba(0, 0, 0, 0.8);
-    box-shadow: 0px 2px 4px 0px hsl(34deg 78% 20% / 40%);
+    box-shadow: var(--todo-shadow);
   }
 }
