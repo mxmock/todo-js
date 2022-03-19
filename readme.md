@@ -1,12 +1,32 @@
-# Step 1
+# Step 2
 
-- [ ] Créer une constante nommée `root` qui ciblera la `div` du __DOM__ ayant `id="root"`
-- [ ] Créer une constante nommée `todoUl` qui sera assignée à une balise `<ul>` créée via javascript _(`createElement`)_
-- [ ] Ajouter une ___class___ `todos-list` à cet `<ul>` nouvellement créé
-- [ ] Insérer dans le `<ul>` le contenu suivant _(`innerHTML`)_: 
-```js
-<li class="todo">
-  <a class="todo__link" href="#">Todo numéro 1</a>
-</li>
-```
-- [ ] Insérer `todoUl` dans `root` _(`append`)_
+### Part 1
+
+- [ ] Créer une fonction `main()`
+- [ ] Déplacer la variable `root` dans la fonction `main()`
+- [ ] Effacer tout le reste du code (tout ce qui est en dehors de la fonction `main()`)
+- [ ] Ajouter un `addEventListener` permettant d'écouter l'événement **_'load'_**, et ayant en deuxième paramètre la fonction `main`
+- [ ] Ajouter dans `main()` un `console.log(root)` et vérifier que la console affiche bien la `<div id="root">`
+
+### Part 2
+
+> _Nous allons créer une liste d'objets javascripts, chaque objet correspondra à un todo. Un todo sera donc un objet qui aura les propriétés suivantes: `id`, `name`, `completed`, `deleted`_
+
+- [ ] Créer une fonction `generateTodos()` qui aura pour but de générer une liste d'objets. Cette fonction retournera donc un tableau.
+- [ ] Créer une const `todos` (dans la fonction `generateTodos()`) qui sera un tableau vide.
+- [ ] Créer un objet `todo` (toujours dans la fonction) avec comme propriétés un `id` qui vaut **1**, un `name` qui vaut **"Todo numéro 1"**, un état `completed` qui vaut **false** et un état `deleted` qui vaut **false**
+- [ ] Envoyer cet objet `todo` dans le tableau `todos`
+- [ ] Faire un `console.log(todos)` et constater dans la console que l'on retrouve bien notre tableau avec l'objet `todo` à l'intérieur
+- [ ] Une fois le résultat correct obtenu, plutôt que de créer qu'un seul `todo`, faire une boucle `for` (toujours dans la fonction) bouclant 10 fois, et à chaque tour de boucle insérer un nouveau `todo` dans le tableau `todos` (donc 10 `todo` au total dans le tableau)
+- [ ] Incrémenter la valeur de chacun des `id` des `todo` en fonction de la variable `i`. Pareil concernant le `name` d'un `todo`
+- [ ] Ne pas oublier de renvoyer le tableau `todos` final
+- [ ] Maintenant au lieu de boucler 10 fois, ajouter un paramètre `nbrOfTodos` dans la fonction `generateTodos(nbrOfTodos)`, afin de boucler autant de fois que la variable `nbrOfTodos` l'indique
+- [ ] Finir par créer une constante `todos` dans la fonction `main()`, qui vaut `generateTodos(12)`.
+- [ ] Faire un `console.log(todos)` pour vérifier que l'on obtient bien un tableau avec 12 objets `todo` à l'intérieur
+
+### Part 3
+
+> _Maintenant nous allons faire une fonction qui nous permettra de créer une balise `<li>` en fonction d'un objet `todo`_
+
+- [ ] Créer une fonction `createLi()`
+- [ ] Dans cette fonction, créer une constante `li` qui vaut `document.createElement("li")`, afin de créer une balise `<li>`
