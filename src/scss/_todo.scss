@@ -27,19 +27,26 @@
 
 .todo {
   --todo-shadow: 0px 2px 4px 0px hsl(34deg 78% 20% / 40%);
-  &__link {
+  &__label {
     &:hover,
-    &:focus {
+    &:focus,
+    &:focus-within {
       background: bisque;
       transform: scale(1.05);
     }
-    &:focus {
+    &:focus,
+    &:focus-within {
       box-shadow: var(--todo-shadow), var(--focus-border);
     }
     &--completed {
       &:hover,
-      &:focus {
+      &:focus,
+      &:focus-within {
         @include completed;
+      }
+      &:focus,
+      &:focus-within {
+        box-shadow: var(--focus-border);
       }
       @include cross-line;
       @include completed;

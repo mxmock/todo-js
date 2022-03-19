@@ -26,7 +26,18 @@
 
 ### Part 3
 
-> _Maintenant nous allons faire une fonction qui nous permettra de créer une balise `<li>` en fonction d'un objet `todo`_
+> _Maintenant nous allons créer un `<label>` qui contiendra le nom du `todo` ainsi qu'un `<input type="checkbox">` permettant de cocher le `todo` lorsqu'il sera complété, la checkbox sera masquée via le css fourni. Le contenu du `<label>` sera dépendant d'un objet `todo`._
 
-- [ ] Créer une fonction `createLi()`
-- [ ] Dans cette fonction, créer une constante `li` qui vaut `document.createElement("li")`, afin de créer une balise `<li>`
+- [ ] Créer une fonction `createTodoCheckbox(todo)` avec un paramètre `todo`
+- [ ] Dans cette fonction, créer une const `label` qui sera le résultat de la création d'un `<label>` via js
+- [ ] Ajouter un attribut `for` sur le label, qui aura pour valeur `todo-${todo.id}`
+- [ ] Ajouter sur le label la class _"todo__label"_
+- [ ] Lui ajouter également une class _"todo__label--completed"_ si et seulement si `todo.completed` est __true__.
+- [ ] Insérer le texte ayant pour valeur `todo.name` dans `label` via `innerText`
+- [ ] Créer une nouvelle const `checkbox` qui sera le résultat de la création d'un `<input />` via js
+- [ ] Ajouter un `id` à l'input ayant pour valeur `todo-${todo.id}`
+- [ ] Ajouter également un `type` étant égal à _"checkbox"_
+- [ ] Modifier la propriété `checked` de `checkbox` en lui attribuant la valeur `todo.completed`
+- [ ] Pour finir, lui ajouter la class _"toto__input"_
+- [ ] Insérer `checkbox` dans `label`
+- [ ] Finir par retourner `label`
