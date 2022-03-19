@@ -28,6 +28,18 @@ const generateTodos = (nbrOfTodos) => {
   return todos;
 };
 
+const switchStatus = (id, status) => {
+  const todoLabel = document.querySelector(`label[for*=${id}]`);
+  status
+    ? todoLabel.classList.add("todo__label--completed")
+    : todoLabel.classList.remove("todo__label--completed");
+};
+
+const onCheckboxClick = (event) => {
+  const checkbox = event.target;
+  switchStatus(checkbox.id, checkbox.checked);
+};
+
 const createTodoCheckbox = (todo) => {
   // création d'un <label>
   const label = document.createElement("label");
@@ -51,6 +63,8 @@ const createTodoCheckbox = (todo) => {
   checkbox.checked = todo.completed;
   // ajout de la class "todo__input" et "sr-only"
   checkbox.classList.add("todo__input", "sr-only");
+  // ajout de l'event listener sur le click d'un todo
+  checkbox.addEventListener("click", onCheckboxClick);
   // insertion de la checkbox dans le label
   label.append(checkbox);
   // renvoi du label
