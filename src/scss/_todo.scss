@@ -22,7 +22,11 @@
 
 .todos-list {
   gap: 16px;
-  font-size: 40px;
+  width: 100%;
+  overflow: auto;
+  padding: 32px 0;
+  align-items: center;
+  max-height: calc(100vh - 80px);
 }
 
 .todo {
@@ -53,6 +57,7 @@
     }
     cursor: pointer;
     padding: 0 16px;
+    max-width: 400px;
     min-height: 32px;
     line-height: 32px;
     user-select: none;
