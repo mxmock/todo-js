@@ -28,8 +28,10 @@ const generateTodos = (nbrOfTodos) => {
   return todos;
 };
 
-const switchStatus = (id, status) => {
-  const todoLabel = document.querySelector(`label[for*=${id}]`);
+const switchState = (checkbox) => {
+  const status = checkbox.checked;
+  // const todoLabel = document.querySelector(`label[for*=${checkbox.id}]`);
+  const todoLabel = checkbox.parentElement;
   status
     ? todoLabel.classList.add("todo__label--completed")
     : todoLabel.classList.remove("todo__label--completed");
@@ -37,7 +39,7 @@ const switchStatus = (id, status) => {
 
 const onCheckboxClick = (event) => {
   const checkbox = event.target;
-  switchStatus(checkbox.id, checkbox.checked);
+  switchState(checkbox);
 };
 
 const createTodoCheckbox = (todo) => {
